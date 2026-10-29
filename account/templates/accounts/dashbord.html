@@ -1,0 +1,8 @@
+<h2>Welcome to Dashboard</h2>
+
+<p>You are logged in successfully!</p>
+
+<form method="POST" action="{% url 'logout' %}">
+    {% csrf_token %}
+    <button type="submit">Logout</button>
+</form>
