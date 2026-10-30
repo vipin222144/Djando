@@ -1,5 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
+from django.contrib.auth import authenticate, login
 # Create your views here.
 
 from django.shortcuts import render, redirect
@@ -21,7 +22,7 @@ def signup_view(request):
         "form": form
     })
 
-    from django.contrib.auth import authenticate, login
+    
 
 def login_view(request):
     if request.method == "POST":
@@ -71,4 +72,7 @@ def contact(request):
 
 def contact2(request):
     return render(request, 'home.html')    
+    
+def signup(request):
+    return render(request, 'accounts/signup.html')
     
