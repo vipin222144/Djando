@@ -13,19 +13,22 @@
          <ul class="nav">
             <h3>vipinTech</h3>
             <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-            <li class="nav-item"><a  class="nav-link" href="/about/">About</a></li>
-            <li class="nav-item"> <a class="nav-link" href="/contact/">Contact</a></li>
-            <li class="nav-item"> <a class="nav-link" href="/login/">login</a></li>
+            <li class="nav-item"><a  class="nav-link" href="{% url 'dash'%}">About</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{% url 'contact'%}">Contact</a></li>
+             <li class="nav-item"> <a class="nav-link" href="{% url 'logout'%}">Logout</a></li>
+             <li class=" text-left"><p>User, {{ request.user.username }}</p></li>
           </ul>
     </nav>
 
 
-
+<p>Demotech</p>
 
     {% block content %}
     
     {% endblock %}
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A magnam suscipit consequuntur dolorum! Nemo non obcaecati rem iusto illum laborum culpa, vel repellendus ut optio totam beatae? Nobis voluptate tenetur, iusto, eius laudantium cum vitae quisquam illo molestias hic nulla in modi exercitationem quia ipsa quas mollitia fugiat expedita tempora earum praesentium sit? Officiis magnam tempore mollitia dolorem inventore non in ad atque vero deserunt libero, molestiae, porro eveniet officia laudantium ipsam. Id itaque ex repellendus fuga vitae nisi. Qui voluptatem suscipit libero consequatur praesentium molestias excepturi! Quisquam error minima quas dolorum sunt incidunt veniam maxime. Totam unde temporibus quo quod ex nihil suscipit illum expedita dolorum ut, voluptatem, libero harum! Explicabo iure sit fugiat quod ad eveniet omnis beatae, adipisci assumenda voluptate quo ipsum voluptates hic consequatur voluptas quas nostrum ea recusandae neque culpa id! Molestiae nemo aliquam minus iusto quaerat mollitia doloremque dolore accusamus ea aut optio, libero consequatur. Eum ab ipsum, error deleniti placeat veniam cumque ducimus iusto harum vitae maxime dolorum nisi quia et in saepe quaerat laborum architecto id natus illum perferendis ipsam quod? Ipsam est expedita voluptates distinctio eius, excepturi sint hic veritatis recusandae nesciunt quae fugiat quod libero doloremque consequatur enim ipsa nulla!
 
+</p>
     <footer class="text-bg-secondary fixed-bottom mt-auto">
         <p class="text-center">Copyright 2026</p>
     </footer>

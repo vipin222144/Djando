@@ -1,33 +1,43 @@
+from django.shortcuts import render, redirect
+from .forms import SignupForm
+from django.contrib.auth import authenticate, login
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
-from django.contrib.auth import authenticate, login
-# Create your views here.
-
-from django.shortcuts import render, redirect
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib import messages
 
 def signup_view(request):
-    if request.method == "POST":
-        form = UserCreationForm(request.POST)
+
+    if request.method == 'POST':
+
+        form = SignupForm(request.POST)
 
         if form.is_valid():
+
             form.save()
-            messages.success(request, "Account created successfully!")
-            return redirect("login")
+
+            messages.success(
+                request,
+                "Registration successful!"
+            )
+
+            return redirect('login')
+
     else:
-        form = UserCreationForm()
+        form = SignupForm()
 
-    return render(request, "accounts/signup.html", {
-        "form": form
-    })
+    return render(
+        request,
+        'box/singup.html',
+        {'form': form}
+    )
 
-    
-
+    #login
 def login_view(request):
+
     if request.method == "POST":
-        username = request.POST.get("username")
-        password = request.POST.get("password")
+
+        username = request.POST.get('username')
+        password = request.POST.get('password')
 
         user = authenticate(
             request,
@@ -37,42 +47,39 @@ def login_view(request):
 
         if user is not None:
             login(request, user)
-            return redirect("dashboard")
+            messages.success(request, "Login successful!")
+            return redirect('home')
+
         else:
-            messages.error(request, "Invalid username or password")
+            messages.error(request, "Invalid username or password!")
 
-    return render(request, "accounts/login.html")
+    return render(request, 'box/login.html')
 
-
-    
-
-@login_required(login_url="login")
+#dasbord
+@login_required(login_url='login')
 def dashboard(request):
-    return render(request, "accounts/dashboard.html")
+    return render(request, 'box/dashbord.html')
 
+@login_required(login_url='login')
+def dash(request):
+    return render(request, 'about.html')
 
-
-
-def logout_view(request):
-    if request.method == "POST":
-        logout(request)
-        return redirect("login")
-
-    return redirect("dashboard")
-
-
+@login_required(login_url='login')
 def home(request):
-    return render(request, 'home.html')
+    return render(request, 'index.html')
 
-def about(request):
-    return render(request, 'home.html')
-
+@login_required(login_url='login')
 def contact(request):
     return render(request, 'home.html')
 
-def contact2(request):
-    return render(request, 'home.html')    
     
-def signup(request):
-    return render(request, 'accounts/signup.html')
     
+    
+#logout
+def logout_view(request):
+
+    logout(request)
+
+    messages.success(request, "You have logged out successfully!")
+
+    return redirect('login')
