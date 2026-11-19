@@ -15,7 +15,10 @@
             <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
             <li class="nav-item"><a  class="nav-link" href="{% url 'dash'%}">About</a></li>
             <li class="nav-item"> <a class="nav-link" href="{% url 'contact'%}">Contact</a></li>
+             <li class="nav-item"> <a class="nav-link" href="{% url 'student_create'%}">From</a></li>
              <li class="nav-item"> <a class="nav-link" href="{% url 'logout'%}">Logout</a></li>
+              <li class="nav-item"> <a class="nav-link" href="{% url 'subject'%}">uplode_pdf</a></li>
+               <li class="nav-item"> <a class="nav-link" href="{% url 'subdata'%}">pdf</a></li>
              <li class=" text-left"><p>User, {{ request.user.username }}</p></li>
           </ul>
     </nav>

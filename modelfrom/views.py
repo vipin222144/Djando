@@ -24,6 +24,4 @@ def student_list(request):
 
     students = vipin.objects.all()
 
-    return render(request, 'data.html', {
-        'students': students
-    })
+    return render(request, 'data.html', { 'students': students })
