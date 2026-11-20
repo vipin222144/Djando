@@ -64,6 +64,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'vipincart.wsgi.application'
 
+#model indian time 
+TIME_ZONE = 'Asia/Kolkata'
+
+USE_TZ = True
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
@@ -100,11 +104,11 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+
 
 USE_I18N = True
 
-USE_TZ = True
+
 
 
 # Static files (CSS, JavaScript, Images)
