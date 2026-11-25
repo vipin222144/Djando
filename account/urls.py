@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('', views.signup_view, name='signup'),
@@ -10,6 +11,7 @@ urlpatterns = [
      path('home/',views.home,name='home'),
      path('contact/',views.contact,name='contact'),
      path('subject/', views.subject ,name='subject'),
-     path('subdata/', views.subdata ,name='subdata')
+     path('subdata/', views.subdata ,name='subdata'),
+     path('ch/', auth_views.PasswordChangeView.as_view(template_name='box/chenge_password.html', success_url='/login/' ), name='ch'),
 
 ]

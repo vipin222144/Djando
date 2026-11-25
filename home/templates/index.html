@@ -20,7 +20,8 @@
              <li class="nav-item"> <a class="nav-link" href="{% url 'logout'%}">Logout</a></li>
               <li class="nav-item"> <a class="nav-link" href="{% url 'subject'%}">uplode_pdf</a></li>
                <li class="nav-item"> <a class="nav-link" href="{% url 'subdata'%}">pdf</a></li>
-             <li class=" text-left"><p>User, {{ request.user.username }}</p></li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'ch'%}"> User, {{ request.user.username }}</a></li>
+             
           </ul>
     </nav>
 
